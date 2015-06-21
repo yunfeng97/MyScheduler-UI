@@ -18,12 +18,30 @@ angular.module('App', ['ionic'])
             abstract: true,
             templateUrl: 'views/dashboard/dashboard.html'
           })
-          .state('dashboard.all', {
-            url: '/all',
+          .state('dashboard.toay', {
+            url: '/todayApp',
             views: {
               'dashboard-all': {
                 controller: 'DashboardController',
-                templateUrl: 'views/dashboard/dashboard-all.html'
+                templateUrl: 'views/dashboard/todayApp.html'
+              }
+            }
+          })
+          .state('dashboard.new', {
+            url: '/newApp',
+            views: {
+              'dashboard-new': {
+                controller: 'DashboardController',
+                templateUrl: 'views/dashboard/newApp.html'
+              }
+            }
+          })
+          .state('dashboard.cancelled', {
+            url: '/cancelledApp',
+            views: {
+              'dashboard-cancelled': {
+                controller: 'DashboardController',
+                templateUrl: 'views/dashboard/cancelledApp.html'
               }
             }
           })
@@ -32,6 +50,9 @@ angular.module('App', ['ionic'])
       $urlRouterProvider.otherwise('/dashboard/all');
     })
 
+    .constant('ApiEndpoint', {
+      url: 'http://192.168.1.171:1337/api'
+    })
 
     .run(function($ionicPlatform) {
       $ionicPlatform.ready(function() {

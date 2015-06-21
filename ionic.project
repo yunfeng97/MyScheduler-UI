@@ -3,8 +3,8 @@
   "app_id": "",
   "proxies": [
      {
-          "path": "/api/dashboard/all",
-          "proxyUrl": "http://localhost:1337/api/dashboard/all"
-        }
+        "path": "/api/dashboard/all",
+        "proxyUrl": "http://192.168.1.171:1337/api/dashboard/today"
+      }
   ]
 }

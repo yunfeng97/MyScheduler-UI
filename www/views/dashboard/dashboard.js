@@ -1,16 +1,5 @@
 angular.module('App')
-    .controller('DashboardController', function ($scope, $http, $timeout) {
-        $scope.currencies = [
-            {
-                name: "value"
-            },
-            {
-                name: "value"
-            },
-            {
-                name: "value"
-            }];
-
+    .controller('DashboardController', function ($scope, $http, ApiEndpoint) {
         $scope.model = {term: ''};
 
         $scope.search = function () {
@@ -22,34 +11,34 @@ angular.module('App')
         $scope.all = function (userId) {
             console.log("all");
             /*
-            $scope.allNotification = [
-                {
-                    eventDate:  "2015-06-01",
-                    customer:   "Mr. Chen",
-                    details:    "Cancelled appointment on June 12, 2015"
-                },
-                {
-                    eventDate:   "2015-06-02",
-                    customer:   "Miss Zhou",
-                    details:    "Make new appointment on June 16 2015 for body check"
-                }
+             $scope.allNotification = [
+             {
+             eventDate:  "2015-06-01",
+             customer:   "Mr. Chen",
+             details:    "Cancelled appointment on June 12, 2015"
+             },
+             {
+             eventDate:   "2015-06-02",
+             customer:   "Miss Zhou",
+             details:    "Make new appointment on June 16 2015 for body check"
+             }
 
-            ];
-            */
+             ];
+             */
             //$http.get('/api/dashboard/all', {params: {userId: userId}}).success(function (data) {
+            //$http.get(ApiEndpoint.url + '/dashboard/all').success(function (data) {
             $http.get('/api/dashboard/all').success(function (data) {
+                //$http.get('http://192.168.1.171:1337/api/dashboard/all').success(function (data) {
                 $scope.allNotification = data;
-                $scope.$broadcast('scroll.refreshComplete');
-                //console.log(data);
+                console.log(data);
                 //return data;
             }).error(function(error){
                 $scope.error = error;
-            });
-
-            //$timeout(function() {
-            //    $scope.$broadcast('scroll.refreshComplete');
-            //    $scope.$broadcast('scroll.refreshComplete');
-            //}, 1250);
+                console.log(error);
+            })
+                .finally(function() {
+                    $scope.$broadcast('scroll.refreshComplete')
+                });
 
         };
 

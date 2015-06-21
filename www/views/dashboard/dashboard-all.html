@@ -1,13 +1,12 @@
 <ion-view view-title="Dashboard All">
     <ion-content>
-        <ion-refresher pulling-text="Pull To Refresh" on-refresh="all()"
-                       refreshing-text="Fetching ..." refreshing-icon="ion-loading-b"
-                ></ion-refresher>
+        <ion-refresher pulling-text="Pull to refresh" on-refresh="all()">
+        </ion-refresher>
         <ion-list>
             <ion-item ng-repeat="item in allNotification">
                 <div class="items item-icon-right">
                     <p>{{item.eventDate}} </p>
-                    <i class="icon ion-checkmark item-icon-right larger"></i>
+                    <i class="icon ion-checkmark larger"></i>
                     <p>{{item.customer}} &nbsp;--&nbsp; {{item.details}}</p>
                 </div>
 
