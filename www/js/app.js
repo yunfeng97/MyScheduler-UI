@@ -21,7 +21,7 @@ angular.module('App', ['ionic'])
           .state('dashboard.toay', {
             url: '/todayApp',
             views: {
-              'dashboard-all': {
+              'dashboard-today': {
                 controller: 'DashboardController',
                 templateUrl: 'views/dashboard/todayApp.html'
               }
@@ -47,7 +47,7 @@ angular.module('App', ['ionic'])
           })
       ;
 
-      $urlRouterProvider.otherwise('/dashboard/all');
+      $urlRouterProvider.otherwise('/dashboard/todayApp');
     })
 
     .constant('ApiEndpoint', {

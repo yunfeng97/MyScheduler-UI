@@ -1,6 +1,6 @@
 angular.module('App')
     .controller('DashboardController', function ($scope, $http, ApiEndpoint) {
-        $scope.model = {term: ''};
+        //$scope.model = {term: ''};
 
         $scope.search = function () {
             $http.get('https://maps.googleapis.com/maps/api/geocode/json', {params: {address: $scope.model.term}}).success(function (response) {
@@ -8,7 +8,7 @@ angular.module('App')
             });
         };
 
-        $scope.all = function (userId) {
+        $scope.getTodayApps = function (userId) {
             console.log("all");
             /*
              $scope.allNotification = [
@@ -27,9 +27,9 @@ angular.module('App')
              */
             //$http.get('/api/dashboard/all', {params: {userId: userId}}).success(function (data) {
             //$http.get(ApiEndpoint.url + '/dashboard/all').success(function (data) {
-            $http.get('/api/dashboard/all').success(function (data) {
+            $http.get('/api/dashboard/todayApps').success(function (data) {
                 //$http.get('http://192.168.1.171:1337/api/dashboard/all').success(function (data) {
-                $scope.allNotification = data;
+                $scope.todayApps = data;
                 console.log(data);
                 //return data;
             }).error(function(error){
@@ -51,5 +51,5 @@ angular.module('App')
         $scope.changedAppointment = function () {
         };
 
-        $scope.all("");
+        $scope.getTodayApps("");
     });
