@@ -19,35 +19,35 @@ angular.module('App', ['ionic'])
             templateUrl: 'views/dashboard/dashboard.html'
           })
           .state('dashboard.toay', {
-            url: '/todayApp',
+            url: '/todayApps',
             views: {
               'dashboard-today': {
                 controller: 'DashboardController',
-                templateUrl: 'views/dashboard/todayApp.html'
+                templateUrl: 'views/dashboard/todayApps.html'
               }
             }
           })
           .state('dashboard.new', {
-            url: '/newApp',
+            url: '/newApps',
             views: {
               'dashboard-new': {
                 controller: 'DashboardController',
-                templateUrl: 'views/dashboard/newApp.html'
+                templateUrl: 'views/dashboard/newApps.html'
               }
             }
           })
           .state('dashboard.cancelled', {
-            url: '/cancelledApp',
+            url: '/cancelledApps',
             views: {
               'dashboard-cancelled': {
                 controller: 'DashboardController',
-                templateUrl: 'views/dashboard/cancelledApp.html'
+                templateUrl: 'views/dashboard/cancelledApps.html'
               }
             }
           })
       ;
 
-      $urlRouterProvider.otherwise('/dashboard/todayApp');
+      $urlRouterProvider.otherwise('/dashboard/todayApps');
     })
 
     .constant('ApiEndpoint', {
