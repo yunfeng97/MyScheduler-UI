@@ -42,13 +42,41 @@ angular.module('App')
 
         };
 
-        $scope.newAppointment = function () {
+
+        $scope.getNewAppointments = function () {
         };
 
-        $scope.cancelledAppointment = function () {
+        $scope.getCancelledAppointments = function () {
+
         };
 
-        $scope.changedAppointment = function () {
+        $scope.getChangedAppointments = function () {
+        };
+
+        // accept an appointment
+        $scope.acceptApp = function(appontmentId){
+            // set the status of the appointment to ACT
+        };
+
+        // cancel an appointment
+        $scope.cancelApp = function(appontmentId){
+            // set the status of the appointment to CAN
+
+        };
+
+        // reschedule an appointment
+        $scope.cancelApp = function(appontmentId, appointment){
+
+        };
+
+        // create new or update appointment
+        $scope.saveAppointment = function(appointment){
+
+        };
+
+        // return the details of an appointment with appontmentId
+        $scope.getAppDetails = function(appontmentId){
+
         };
 
         $scope.getTodayApps("");
