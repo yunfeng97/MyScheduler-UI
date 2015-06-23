@@ -1,5 +1,5 @@
 angular.module('App')
-    .controller('DashboardController', function ($scope, $http, ApiEndpoint) {
+    .controller('DashboardController', function ($scope, $http, $stateParams) {
         //$scope.model = {term: ''};
 
         $scope.search = function () {
@@ -9,7 +9,7 @@ angular.module('App')
         };
 
         $scope.getTodayApps = function (userId) {
-            console.log("all");
+
             /*
              $scope.allNotification = [
              {
@@ -32,13 +32,12 @@ angular.module('App')
                 $scope.todayApps = data;
                 console.log(data);
                 //return data;
-            }).error(function(error){
+            }).error(function (error) {
                 $scope.error = error;
                 console.log(error);
-            })
-                .finally(function() {
-                    $scope.$broadcast('scroll.refreshComplete')
-                });
+            }).finally(function () {
+                $scope.$broadcast('scroll.refreshComplete')
+            });
 
         };
 
@@ -54,29 +53,41 @@ angular.module('App')
         };
 
         // accept an appointment
-        $scope.acceptApp = function(appontmentId){
+        $scope.acceptApp = function (appontmentId) {
             // set the status of the appointment to ACT
         };
 
         // cancel an appointment
-        $scope.cancelApp = function(appontmentId){
+        $scope.cancelApp = function (appontmentId) {
             // set the status of the appointment to CAN
 
         };
 
         // reschedule an appointment
-        $scope.cancelApp = function(appontmentId, appointment){
+        $scope.cancelApp = function (appontmentId, appointment) {
 
         };
 
         // create new or update appointment
-        $scope.saveAppointment = function(appointment){
+        $scope.saveAppointment = function (appointment) {
 
         };
 
         // return the details of an appointment with appontmentId
-        $scope.getAppDetails = function(appontmentId){
-
+        $scope.getAppDetails = function () {
+            console.log("app id is: " + $stateParams.appid);
+            $http.get('/api/dashboard/app/:$stateParams.appid').success(function (data) {
+                //$http.get('http://192.168.1.171:1337/api/dashboard/all').success(function (data) {
+                $scope.todayApps = data;
+                $scope.appid = $stateParams.appid;
+                console.log(data);
+                //return data;
+            }).error(function (error) {
+                $scope.error = error;
+                console.log(error);
+            }).finally(function () {
+                $scope.$broadcast('scroll.refreshComplete')
+            });
         };
 
         $scope.getTodayApps("");

@@ -45,6 +45,16 @@ angular.module('App', ['ionic'])
               }
             }
           })
+          .state('dashboard.appdetail', {
+            url: '/appDetails',
+            views: {
+              'dashboard-today': {
+                controller: 'DashboardController',
+                  action: 'getAppDetails',
+                templateUrl: 'views/dashboard/appDetail.html'
+              }
+            }
+          })
       ;
 
       $urlRouterProvider.otherwise('/dashboard/todayApps');

@@ -1,0 +1,18 @@
+<ion-view view-title="Today's Appointments" hide-back-button="true">
+    <ion-content>
+        <ion-refresher pulling-text="Pull to refresh" on-refresh="getTodayApps('')">
+        </ion-refresher>
+        <ion-list>
+            <ion-item ng-repeat="app in todayApps" ui-sref="dashboard.appdetail({appid: app.id})">
+                <div class="items item-icon-right">
+
+                    <p>{{app.eventDate}} </p>
+                    <i class="icon ion-checkmark larger"></i>
+                    <p>{{app.customer}} &nbsp;--&nbsp; {{app.details}}</p>
+
+                </div>
+
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

@@ -1,6 +1,6 @@
-<ion-view view-title="Today's Appointments">
+<ion-view view-title="Cancelled Appointments" hide-back-button="true">
     <ion-content>
-        <ion-refresher pulling-text="Pull to refresh" on-refresh="all()">
+        <ion-refresher pulling-text="Pull to refresh" on-refresh="getTodayApps('')">
         </ion-refresher>
         <ion-list>
             <ion-item ng-repeat="item in todayApps">
