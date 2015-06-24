@@ -74,13 +74,15 @@ angular.module('App')
         };
 
         // return the details of an appointment with appontmentId
-        $scope.getAppDetails = function () {
-            console.log("app id is: " + $stateParams.appid);
-            $http.get('/api/dashboard/app/:$stateParams.appid').success(function (data) {
+        $scope.getAppDetails = function (appid) {
+            //console.log("app id is: " + $stateParams.appid);
+            console.log("app id is: " + appid);
+            $scope.appid = appid;
+            $http.get('/api/dashboard/app/' + appid).success(function (data) {
                 //$http.get('http://192.168.1.171:1337/api/dashboard/all').success(function (data) {
-                $scope.todayApps = data;
-                $scope.appid = $stateParams.appid;
-                console.log(data);
+
+                $scope.appid = appid;
+                console.log("in app details");
                 //return data;
             }).error(function (error) {
                 $scope.error = error;

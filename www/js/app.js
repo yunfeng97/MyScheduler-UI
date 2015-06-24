@@ -3,16 +3,6 @@ angular.module('App', ['ionic'])
     .config(function ($stateProvider, $urlRouterProvider) {
 
         $stateProvider
-            .state('settings', {
-                url: '/settings',
-                controller: 'SettingsController',
-                templateUrl: 'views/settings/settings.html'
-            })
-            .state('weather', {
-                url: '/weather/:city/:lat/:lng',
-                controller: 'WeatherController',
-                templateUrl: 'views/weather/weather.html'
-            })
             .state('dashboard', {
                 url: '/dashboard',
                 abstract: true,
@@ -46,17 +36,14 @@ angular.module('App', ['ionic'])
                 }
             })
             .state('dashboard.appdetail', {
-                cache: false,
-                url: '/appDetails',
+                url: '/appDetails/:appid',
                 views: {
                     'dashboard-today': {
-                        controller: 'DashboardController',
-                        action: 'getAppDetails',
+                        controller: 'AppDetailsController',
                         templateUrl: 'views/dashboard/appDetail.html'
                     }
                 }
-            })
-        ;
+            });
 
         $urlRouterProvider.otherwise('/dashboard/todayApps');
     })

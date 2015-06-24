@@ -5,6 +5,10 @@
      {
         "path": "/api/dashboard/todayApps",
         "proxyUrl": "http://192.168.1.171:1337/api/dashboard/todayApps"
+      },
+      {
+         "path": "/api/dashboard/app",
+         "proxyUrl": "http://192.168.1.171:1337/api/dashboard/app"
       }
   ]
 }

@@ -1,11 +1,12 @@
-<ion-view view-title="Detail for" {{getAppDetails()}}>
-    <ion-content>
-        <ion-list>
-            <ion-item>Last <span class="badge badge-stable">hhhh{{appid}} hhh</span></ion-item>
-
+<ion-view view-title="Detail for" >
+    <ion-content >
+        <ion-list >
+            <ion-item>Name:  <span class="badge badge-stable">{{appDetails.name}}</span></ion-item>
+            <ion-item>Date:  <span class="badge badge-stable">{{appDetails.date}}</span></ion-item>
         </ion-list>
     </ion-content>
     <ion-footer-bar class="bar-dark">
         <h1 class="title">Updated </h1>
     </ion-footer-bar>
 </ion-view>
+<!-- ng-controller="AppDetailsController" -->
