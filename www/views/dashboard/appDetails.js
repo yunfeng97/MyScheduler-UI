@@ -1,5 +1,5 @@
 angular.module('App')
-    .controller('AppDetailsController', function ($scope, $http, $stateParams) {
+    .controller('AppDetailsController', function ($scope, $http, $stateParams, $state) {
         // return the details of an appointment with appontmentId
         $scope.getAppDetails = function () {
             var appid = $stateParams.appid;
@@ -19,5 +19,10 @@ angular.module('App')
             });
         };
 
-        $scope.getAppDetails();
+        //$scope.getAppDetails();
+
+        //if (angular.isUndefined($scope.appDetails)) {
+        //if ($scope.appDetails == null ) {
+        //    $state.go('dashboard.toay', {}, {reload: true});
+        //};
     });

@@ -9,6 +9,7 @@ angular.module('App', ['ionic'])
                 templateUrl: 'views/dashboard/dashboard.html'
             })
             .state('dashboard.toay', {
+                cache: false,
                 url: '/todayApps',
                 views: {
                     'dashboard-today': {
@@ -36,6 +37,7 @@ angular.module('App', ['ionic'])
                 }
             })
             .state('dashboard.appdetail', {
+                cache: false,
                 url: '/appDetails/:appid',
                 views: {
                     'dashboard-today': {

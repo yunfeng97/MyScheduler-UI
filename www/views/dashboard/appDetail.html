@@ -1,12 +1,15 @@
 <ion-view view-title="Detail for" >
     <ion-content >
         <ion-list >
+            <ion-item>Id:  <span class="badge badge-stable">{{appDetails.id}}</span></ion-item>
             <ion-item>Name:  <span class="badge badge-stable">{{appDetails.name}}</span></ion-item>
             <ion-item>Date:  <span class="badge badge-stable">{{appDetails.date}}</span></ion-item>
         </ion-list>
     </ion-content>
-    <ion-footer-bar class="bar-dark">
-        <h1 class="title">Updated </h1>
-    </ion-footer-bar>
+    <div class="bar bar-footer">
+        <button class="button button-clear">Left</button>
+        <div class="title">Title</div>
+        <button class="button button-clear">Right</button>
+    </div>
 </ion-view>
 <!-- ng-controller="AppDetailsController" -->
