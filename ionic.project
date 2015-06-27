@@ -9,6 +9,10 @@
       {
          "path": "/api/dashboard/app",
          "proxyUrl": "http://192.168.1.171:1337/api/dashboard/app"
-      }
+      },
+      {
+               "path": "/api/dashboard/app/accept",
+               "proxyUrl": "http://192.168.1.171:1337/api/dashboard/app/accept"
+            }
   ]
 }
