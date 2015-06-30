@@ -1,15 +1,16 @@
-<ion-view view-title="Today's Appointments">
+<ion-view view-title="New Appointments">
     <ion-content>
-        <ion-refresher pulling-text="Pull to refresh" on-refresh="all()">
+        <ion-refresher pulling-text="Pull to refresh" on-refresh="getNewAppointments()">
         </ion-refresher>
         <ion-list>
-            <ion-item ng-repeat="item in allNotification">
-                <div class="items item-icon-right">
-                    <p>{{item.eventDate}} </p>
-                    <i class="icon ion-checkmark larger"></i>
-                    <p>{{item.customer}} &nbsp;--&nbsp; {{item.details}}</p>
-                </div>
+            <ion-item ng-repeat="app in newApps" ui-sref="dashboard.appdetail({appid: app.id})"
+            ">
+            <div class="items item-icon-right">
+                <p>{{app.eventDate}} </p>
+                <i class="icon ion-checkmark larger"></i>
 
+                <p>{{app.customer}} &nbsp;--&nbsp; {{app.details}}</p>
+            </div>
             </ion-item>
         </ion-list>
     </ion-content>

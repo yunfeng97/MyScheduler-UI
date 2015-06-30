@@ -19,6 +19,7 @@ angular.module('App', ['ionic'])
                 }
             })
             .state('dashboard.new', {
+                //cache: false,
                 url: '/newApps',
                 views: {
                     'dashboard-new': {

@@ -43,6 +43,17 @@ angular.module('App')
 
 
         $scope.getNewAppointments = function () {
+            $http.get('/api/dashboard/newApps').success(function (data) {
+                //$http.get('http://192.168.1.171:1337/api/dashboard/todayApps').success(function (data) {
+                $scope.newApps = data;
+                //console.log(data);
+                //return data;
+            }).error(function (error) {
+                $scope.error = error;
+                console.log(error);
+            }).finally(function () {
+                $scope.$broadcast('scroll.refreshComplete')
+            });
         };
 
         $scope.getCancelledAppointments = function () {
@@ -93,4 +104,6 @@ angular.module('App')
         //};
 
         $scope.getTodayApps("");
+        $scope.getNewAppointments("");
+
     });
