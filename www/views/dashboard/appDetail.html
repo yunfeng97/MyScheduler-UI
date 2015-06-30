@@ -1,0 +1,17 @@
+<ion-view view-title="Appointment Details">
+    <ion-content>
+        <ion-list>
+            <ion-item>Id: <span class="badge badge-stable">{{appDetails.id}}</span></ion-item>
+            <ion-item>Name: <span class="badge badge-stable">{{appDetails.name}}</span></ion-item>
+            <ion-item>Date: <span class="badge badge-stable">{{appDetails.date}}</span></ion-item>
+        </ion-list>
+    </ion-content>
+    <ion-footer-bar align-title="center" class="bar-positive">
+        <h1 class="title">
+            <button class="button button-large" ng-click="accept(appDetails.id)">Accept</button>
+            &nbsp;&nbsp;
+            <button class="button button-large" ng-click="reschedule()">Reschedule</button>
+        </h1>
+    </ion-footer-bar>
+</ion-view>
+<!-- ng-controller="AppDetailsController" -->
