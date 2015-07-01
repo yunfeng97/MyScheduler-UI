@@ -37,6 +37,15 @@ angular.module('App', ['ionic'])
                     }
                 }
             })
+            .state('dashboard.rescheduled', {
+                url: '/rescheduledApps',
+                views: {
+                    'dashboard-rescheduled': {
+                        controller: 'DashboardController',
+                        templateUrl: 'views/dashboard/rescheduledApps.html'
+                    }
+                }
+            })
             .state('dashboard.appdetail', {
                 cache: false,
                 url: '/appDetails/:appid',
