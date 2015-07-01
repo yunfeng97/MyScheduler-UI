@@ -1,9 +1,9 @@
 <ion-view view-title="Cancelled Appointments" hide-back-button="true">
     <ion-content>
-        <ion-refresher pulling-text="Pull to refresh" on-refresh="getTodayApps('')">
+        <ion-refresher pulling-text="Pull to refresh" on-refresh="getCancelledApps('')">
         </ion-refresher>
         <ion-list>
-            <ion-item ng-repeat="item in todayApps">
+            <ion-item ng-repeat="item in cancelledApps">
                 <div class="items item-icon-right">
                     <p>{{item.eventDate}} </p>
                     <i class="icon ion-checkmark larger"></i>

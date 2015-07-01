@@ -42,7 +42,7 @@ angular.module('App')
         };
 
 
-        $scope.getNewAppointments = function () {
+        $scope.getNewApps = function () {
             $http.get('/api/dashboard/newApps').success(function (data) {
                 //$http.get('http://192.168.1.171:1337/api/dashboard/todayApps').success(function (data) {
                 $scope.newApps = data;
@@ -56,8 +56,34 @@ angular.module('App')
             });
         };
 
-        $scope.getCancelledAppointments = function () {
+        $scope.getCancelledApps = function () {
 
+            $http.get('/api/dashboard/cancelledApps').success(function (data) {
+                //$http.get('http://192.168.1.171:1337/api/dashboard/todayApps').success(function (data) {
+                $scope.cancelledApps = data;
+                //console.log(data);
+                //return data;
+            }).error(function (error) {
+                $scope.error = error;
+                console.log(error);
+            }).finally(function () {
+                $scope.$broadcast('scroll.refreshComplete')
+            });
+        };
+
+        $scope.getRescheduledApps = function () {
+
+            $http.get('/api/dashboard/rescheduledApps').success(function (data) {
+                //$http.get('http://192.168.1.171:1337/api/dashboard/todayApps').success(function (data) {
+                $scope.rescheduledApps = data;
+                //console.log(data);
+                //return data;
+            }).error(function (error) {
+                $scope.error = error;
+                console.log(error);
+            }).finally(function () {
+                $scope.$broadcast('scroll.refreshComplete')
+            });
         };
 
         $scope.getChangedAppointments = function () {
@@ -75,7 +101,7 @@ angular.module('App')
         };
 
         // reschedule an appointment
-        $scope.cancelApp = function (appontmentId, appointment) {
+        $scope.reschedApp = function (appontmentId, appointment) {
 
         };
 
@@ -104,6 +130,6 @@ angular.module('App')
         //};
 
         $scope.getTodayApps("");
-        $scope.getNewAppointments("");
+        $scope.getNewApps("");
 
     });

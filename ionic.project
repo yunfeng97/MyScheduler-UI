@@ -4,19 +4,27 @@
   "proxies": [
      {
         "path": "/api/dashboard/todayApps",
-        "proxyUrl": "http://192.168.0.16:1337/api/dashboard/todayApps"
+        "proxyUrl": "http://localhost:1337/api/dashboard/todayApps"
       },
       {
          "path": "/api/dashboard/app",
-         "proxyUrl": "http://192.168.0.16:1337/api/dashboard/app"
+         "proxyUrl": "http://localhost:1337/api/dashboard/app"
       },
       {
-               "path": "/api/dashboard/newApps",
-               "proxyUrl": "http://192.168.0.16:1337/api/dashboard/newApps"
+          "path": "/api/dashboard/newApps",
+          "proxyUrl": "http://localhost:1337/api/dashboard/newApps"
       },
       {
-               "path": "/api/dashboard/app/accept",
-               "proxyUrl": "http://192.168.0.16:1337/api/dashboard/app/accept"
+          "path": "/api/dashboard/cancelledApps",
+          "proxyUrl": "http://localhost:1337/api/dashboard/cancelledApps"
+      },
+      {
+          "path": "/api/dashboard/rescheduledApps",
+          "proxyUrl": "http://localhost:1337/api/dashboard/rescheduledApps"
+      },
+      {
+           "path": "/api/dashboard/app/accept",
+           "proxyUrl": "http://localhost:1337/api/dashboard/app/accept"
       }
   ]
 }

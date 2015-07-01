@@ -1,6 +1,6 @@
 <ion-view view-title="New Appointments">
     <ion-content>
-        <ion-refresher pulling-text="Pull to refresh" on-refresh="getNewAppointments()">
+        <ion-refresher pulling-text="Pull to refresh" on-refresh="getNewApps()">
         </ion-refresher>
         <ion-list>
             <ion-item ng-repeat="app in newApps" ui-sref="dashboard.appdetail({appid: app.id})"
