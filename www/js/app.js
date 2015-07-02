@@ -3,6 +3,10 @@ angular.module('App', ['ionic'])
     .config(function ($stateProvider, $urlRouterProvider) {
 
         $stateProvider
+            .state('clients', {
+                url: '/clients',
+                templateUrl: 'views/clients/clients.html'
+            })
             .state('dashboard', {
                 url: '/dashboard',
                 abstract: true,

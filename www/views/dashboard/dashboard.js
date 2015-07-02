@@ -129,7 +129,8 @@ angular.module('App')
         //    });
         //};
 
-        $scope.getTodayApps("");
-        $scope.getNewApps("");
-
+        $scope.getTodayApps();
+        $scope.getNewApps();
+        $scope.getRescheduledApps();
+        $scope.getCancelledApps();
     });
