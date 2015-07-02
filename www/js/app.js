@@ -7,13 +7,17 @@ angular.module('App', ['ionic'])
                 url: '/clients',
                 templateUrl: 'views/clients/clients.html'
             })
+            .state('settings', {
+                url: '/settings',
+                templateUrl: 'views/settings/settings.html'
+            })
             .state('dashboard', {
                 url: '/dashboard',
                 abstract: true,
                 templateUrl: 'views/dashboard/dashboard.html'
             })
-            .state('dashboard.toay', {
-                cache: false,
+            .state('dashboard.today', {
+                //cache: false,
                 url: '/todayApps',
                 views: {
                     'dashboard-today': {

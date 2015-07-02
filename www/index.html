@@ -48,9 +48,9 @@
     </ion-header-bar>
     <ion-content>
       <ion-list>
-        <ion-item class="item-icon-left" ui-sref="dashboard" menu-close><span class="icon ion-home"></span> Dashboard</ion-item>
+        <ion-item class="item-icon-left" ui-sref="dashboard.today" menu-close><span class="icon ion-home"></span> Dashboard</ion-item>
         <ion-item class="item-icon-left" ui-sref="clients" menu-close><span class="icon ion-ios-cog"></span> Clients</ion-item>
-        <ion-item class="item-icon-left" ui-sref="settings" menu-close><span class="icon ion-ios-cog"></span> Calendar</ion-item>
+        <ion-item class="item-icon-left" ui-sref="calendar" menu-close><span class="icon ion-ios-cog"></span> Calendar</ion-item>
         <ion-item class="item-icon-left" ui-sref="settings" menu-close><span class="icon ion-ios-cog"></span> Settings</ion-item>
         <ion-item class="item-divider">Favorites</ion-item>
         <ion-item class="item-icon-left" ui-sref="weather({city: location.city, lat: location.lat, lng: location.lng})" menu-close ng-repeat="location in locations"><span class="icon ion-ios-location"></span> {{location.city}}</ion-item>
