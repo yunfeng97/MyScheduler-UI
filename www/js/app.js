@@ -7,6 +7,10 @@ angular.module('App', ['ionic'])
                 url: '/clients',
                 templateUrl: 'views/clients/clients.html'
             })
+            .state('client.new', {
+                url: '/client-new',
+                templateUrl: 'views/clients/newClient.html'
+            })
             .state('settings', {
                 url: '/settings',
                 templateUrl: 'views/settings/settings.html'
