@@ -7,8 +7,35 @@ angular.module('App')
         $scope.getAllClients = function () {
             $http.get('/api/clients/allClients').success(function (data) {
                 //$http.get('http://192.168.1.171:1337/api/clients/allClients').success(function (data) {
-                $scope.allClients = data;
-                //console.log(data);
+                var allClients = [];
+                //var newInitial = true;
+                var lastInitial = '';
+
+                data.forEach(function(client){
+                    if (client.name.substring(0,1) != lastInitial){
+                        //newInitial = true;
+                        lastInitial = client.name.substring(0,1);
+                        allClients.push({name: lastInitial, id: -1});
+                    }
+                    allClients.push(client);
+                });
+
+                /*
+                for (var ch='A'; ch<'Z'; ch++){
+                    for(var i=0; i<data.size; i++){
+                        var name = data[i].name;
+                        if (name.indexOf(ch) == 0){
+                            if (allClients[ch] == null){
+                                allClients[ch] = [];
+                            }
+
+                            allClients[ch].add(data[i]);
+                        }
+                    }
+                }
+                */
+                $scope.allClients = allClients;
+                console.log("get all clients: " + data);
                 //return data;
             }).error(function (error) {
                 $scope.error = error;
@@ -18,4 +45,5 @@ angular.module('App')
             });
         };
 
+        $scope.getAllClients();
     });

@@ -25,7 +25,7 @@ angular.module('App')
             //$http.put('http://192.168.1.171:1337/api/dashboard/app/accept/2').success(function (data) {
                 $scope.appDetails = data;
                 console.log("data: " + data);
-                console.log("in app detail controller");
+                //console.log("in app detail controller");
                 //return data;
                 //}).error(function (error) {
                 //    $scope.error = error;

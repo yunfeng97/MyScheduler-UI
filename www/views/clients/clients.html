@@ -1,11 +1,13 @@
-<ion-view view-title="Clients">
+<ion-view view-title="Clients" ng-controller="ClientsController">
     <ion-nav-buttons side="right">
         <!--<button class="button icon ion-plus" ui-sref="client.new"><span class="icon ion-more"></span></button>-->
         <a class="button icon ion-plus" href="#/clientnew"></a>
         <!--<button class="button  button-clear button-positive">New</button>-->
     </ion-nav-buttons>
+    <!--
     <ion-content>
         <div class="list">
+            <ion-item ng-repeat="item in cancelledApps">
 
             <div class="item item-divider">
                 A
@@ -23,6 +25,26 @@
 
         </div>
 
+    </ion-content>
+    -->
+    <ion-content>
+        <ion-refresher pulling-text="Pull to refresh" on-refresh="getAllClients('')">
+        </ion-refresher>
+
+        <div class="list" ng-repeat="client in allClients ">
+
+            {{if (client.id == -1)}}
+                <i ng-if="client.id==-1" class="item item-divider">
+                    {{client.name}}
+                </i>
+            {{endif}}
+            {{if (client.id!=-1)}}
+                <a class="item"  href="#">
+                    {{client.name}}
+                </a>
+            {{endif}}
+
+        </div>
     </ion-content>
 
     <div class="bar bar-footer item-input-inset">

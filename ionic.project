@@ -25,6 +25,10 @@
       {
            "path": "/api/dashboard/app/accept",
            "proxyUrl": "http://localhost:1337/api/dashboard/app/accept"
+      },
+      {
+           "path": "/api/clients/allClients",
+           "proxyUrl": "http://localhost:1337/api/clients/allClients"
       }
   ]
 }

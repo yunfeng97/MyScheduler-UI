@@ -111,6 +111,19 @@ angular.module('App', ['ionic'])
         };
     })
 
+    .filter('startsWith', function() {
+        return function(array, search) {
+            var matches = [];
+            for(var i = 0; i < array.length; i++) {
+                if (array[i].indexOf(search) === 0 &&
+                    search.length < array[i].length) {
+                    matches.push(array[i]);
+                }
+            }
+            return matches;
+        };
+    })
+
     .filter('icons', function () {
         var map = {
             'clear-day': 'ion-ios-sunny',
