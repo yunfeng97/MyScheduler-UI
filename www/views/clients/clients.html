@@ -31,19 +31,16 @@
         <ion-refresher pulling-text="Pull to refresh" on-refresh="getAllClients('')">
         </ion-refresher>
 
-        <div class="list" ng-repeat="client in allClients ">
-
-            {{if (client.id == -1)}}
-                <i ng-if="client.id==-1" class="item item-divider">
-                    {{client.name}}
-                </i>
-            {{endif}}
-            {{if (client.id!=-1)}}
-                <a class="item"  href="#">
-                    {{client.name}}
-                </a>
-            {{endif}}
-
+        <div class="list">
+            <!--
+            <div ng-show="client.id==-1">
+                <ion-item ng-show="client.id==-1" class="item item-divider">{{client.name}}</ion-item>
+            </div>
+            <a ng-show="client.id != -1" class="item"  href="#">
+                {{client.name}}
+            </a>
+            -->
+            <ion-item  ng-repeat="client in allClients " class="item {{client.class}}" ng-click="editClient(client.id)">{{client.name}}</ion-item>
         </div>
     </ion-content>
 

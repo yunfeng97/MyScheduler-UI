@@ -15,7 +15,7 @@ angular.module('App')
                     if (client.name.substring(0,1) != lastInitial){
                         //newInitial = true;
                         lastInitial = client.name.substring(0,1);
-                        allClients.push({name: lastInitial, id: -1});
+                        allClients.push({name: lastInitial, id: -1, class: 'item-divider'});
                     }
                     allClients.push(client);
                 });
@@ -43,6 +43,10 @@ angular.module('App')
             }).finally(function () {
                 $scope.$broadcast('scroll.refreshComplete')
             });
+        };
+
+        $scope.editClient = function(clientId){
+            console.log(clientId);
         };
 
         $scope.getAllClients();
