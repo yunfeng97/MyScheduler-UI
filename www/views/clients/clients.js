@@ -3,6 +3,7 @@
  */
 angular.module('App')
     .controller('ClientsController', function ($scope, $http, $stateParams) {
+        $scope.client = {phone:''};
 
         $scope.getAllClients = function () {
             $http.get('/api/clients/allClients').success(function (data) {
@@ -47,6 +48,15 @@ angular.module('App')
 
         $scope.editClient = function(clientId){
             console.log(clientId);
+        };
+
+        $scope.cancellAddNew = function(){
+            window.history.back();
+        };
+
+        $scope.addNewClient  = function(){
+            console.log("phone is: " + $scope.client.phone);
+
         };
 
         $scope.getAllClients();

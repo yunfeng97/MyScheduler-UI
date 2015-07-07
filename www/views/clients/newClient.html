@@ -1,29 +1,29 @@
-<ion-view view-title="New Client">
+<ion-view view-title="New Client" ng-controller="ClientsController">
     <ion-content>
         <div class="list">
             <label class="item item-input">
                 <span class="input-label">First Name</span>
-                <input type="text" placeholder="John">
+                <input type="text" placeholder="Black" ng-model="firstName">
             </label>
             <label class="item item-input">
                 <span class="input-label">Last Name</span>
-                <input type="text" placeholder="Suhr">
+                <input type="text" placeholder="Smith" ng-model="lastName">
             </label>
             <label class="item item-input">
                 <span class="input-label">Email</span>
-                <input type="text" placeholder="john@suhr.com">
+                <input type="text" placeholder="smith@gmail.com" ng-model="email">
             </label>
             <label class="item item-input">
                 <span class="input-label">Phone</span>
-                <input type="text" placeholder="xxx-xxx xxxx">
+                <input type="text" placeholder="xxx-xxx xxxx" ng-model="client.phone">
             </label>
         </div>
     </ion-content>
     <ion-footer-bar align-title="center" class="bar-positive">
         <h1 class="title">
-            <button class="button button-large" ng-click="accept(appDetails.id)">Add</button>
-            &nbsp;&nbsp;
-            <button class="button button-large" ng-click="reschedule()">Cancel</button>
+            <button class="button button-large" ng-click="addNewClient()">Add</button>
+            &nbsp;&nbsp;&nbsp;
+            <button class="button button-large" ng-click="$ionicGoBack()">Cancel</button>
         </h1>
     </ion-footer-bar>
 </ion-view>
