@@ -1,2 +1,29 @@
 <ion-view view-title="New Client">
-    </ion-view>
+    <ion-content>
+        <div class="list">
+            <label class="item item-input">
+                <span class="input-label">First Name</span>
+                <input type="text" placeholder="John">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Last Name</span>
+                <input type="text" placeholder="Suhr">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Email</span>
+                <input type="text" placeholder="john@suhr.com">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Phone</span>
+                <input type="text" placeholder="xxx-xxx xxxx">
+            </label>
+        </div>
+    </ion-content>
+    <ion-footer-bar align-title="center" class="bar-positive">
+        <h1 class="title">
+            <button class="button button-large" ng-click="accept(appDetails.id)">Add</button>
+            &nbsp;&nbsp;
+            <button class="button button-large" ng-click="reschedule()">Cancel</button>
+        </h1>
+    </ion-footer-bar>
+</ion-view>
