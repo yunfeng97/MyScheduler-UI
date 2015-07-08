@@ -47,4 +47,23 @@ angular.module('starter.services', [])
       return null;
     }
   };
-});
+})
+    .factory('HttpService', function($http){
+      return {
+        httpGet: function(){
+
+        },
+
+        httpPost: function(){
+
+        },
+
+        httpPut: function(){
+
+        },
+
+        httpDelete: function(){
+
+        }
+      }
+    });

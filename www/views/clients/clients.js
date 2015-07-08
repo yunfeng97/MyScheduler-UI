@@ -3,7 +3,7 @@
  */
 angular.module('App')
     .controller('ClientsController', function ($scope, $http, $stateParams) {
-        $scope.client = {phone:''};
+        $scope.client = {};
 
         $scope.getAllClients = function () {
             $http.get('/api/clients/allClients').success(function (data) {
@@ -44,6 +44,21 @@ angular.module('App')
             }).finally(function () {
                 $scope.$broadcast('scroll.refreshComplete')
             });
+        }
+
+        $scope.showClient = function(clientId){
+            console.log("in ShowClient with clientId: " + clientId);
+            $http.get('/api/clients/client/:clienId' + clientId).success(function (data) {
+                //$http.get('http://192.168.1.171:1337/api/dashboard/todayApps').success(function (data) {
+                $scope.newApps = data;
+                //console.log(data);
+                //return data;
+            }).error(function (error) {
+                $scope.error = error;
+                console.log(error);
+            }).finally(function () {
+                $scope.$broadcast('scroll.refreshComplete')
+            });
         };
 
         $scope.editClient = function(clientId){
@@ -55,7 +70,8 @@ angular.module('App')
         };
 
         $scope.addNewClient  = function(){
-            console.log("phone is: " + $scope.client.phone);
+            console.log("client firstname is: " + $scope.client.firstName);
+            console.log("client email is: " + $scope.client.email);
 
         };
 
