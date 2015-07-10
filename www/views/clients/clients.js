@@ -2,7 +2,7 @@
  * Created by yunfeng on 02/07/15.
  */
 angular.module('App')
-    .controller('ClientsController', function ($scope, $http, $stateParams) {
+    .controller('ClientsController', function ($scope, $http, $stateParams, $window) {
         $scope.client = {};
 
         $scope.getAllClients = function () {
@@ -44,15 +44,16 @@ angular.module('App')
             }).finally(function () {
                 $scope.$broadcast('scroll.refreshComplete')
             });
-        }
+        },
 
         $scope.showClient = function(clientId){
             console.log("in ShowClient with clientId: " + clientId);
-            $http.get('/api/clients/client/:clienId' + clientId).success(function (data) {
+            $http.get('/api/clients/client/:clientId' ).success(function (data) {
                 //$http.get('http://192.168.1.171:1337/api/dashboard/todayApps').success(function (data) {
                 $scope.newApps = data;
                 //console.log(data);
                 //return data;
+                $window.location.href = '#/showclient';
             }).error(function (error) {
                 $scope.error = error;
                 console.log(error);

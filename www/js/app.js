@@ -5,11 +5,17 @@ angular.module('App', ['ionic'])
         $stateProvider
             .state('clients', {
                 url: '/clients',
+                controller: 'ClientsController',
                 templateUrl: 'views/clients/clients.html'
             })
             .state('clientnew', {
                 url: '/clientnew',
                 templateUrl: 'views/clients/newClient.html'
+            })
+            .state('showclient', {
+                url: '/showclient',
+                controller: 'ClientsController',
+                templateUrl: 'views/clients/clientDetail.html'
             })
             .state('settings', {
                 url: '/settings',
