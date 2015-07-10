@@ -13,8 +13,9 @@ angular.module('App', ['ionic'])
                 templateUrl: 'views/clients/newClient.html'
             })
             .state('showclient', {
-                url: '/showclient',
-                controller: 'ClientsController',
+                cache: false,
+                url: '/showclient/:clientid',
+                //controller: 'ClientDetailsController',
                 templateUrl: 'views/clients/clientDetail.html'
             })
             .state('settings', {

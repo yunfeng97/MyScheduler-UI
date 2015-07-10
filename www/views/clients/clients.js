@@ -46,22 +46,6 @@ angular.module('App')
             });
         },
 
-        $scope.showClient = function(clientId){
-            console.log("in ShowClient with clientId: " + clientId);
-            $http.get('/api/clients/client/:clientId' ).success(function (data) {
-                //$http.get('http://192.168.1.171:1337/api/dashboard/todayApps').success(function (data) {
-                $scope.newApps = data;
-                //console.log(data);
-                //return data;
-                $window.location.href = '#/showclient';
-            }).error(function (error) {
-                $scope.error = error;
-                console.log(error);
-            }).finally(function () {
-                $scope.$broadcast('scroll.refreshComplete')
-            });
-        };
-
         $scope.editClient = function(clientId){
             console.log(clientId);
         };

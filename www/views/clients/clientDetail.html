@@ -1,5 +1,30 @@
-<ion-view view-title="Client Information">
+<ion-view  ng-controller="ClientDetailsController" view-title="{{clientDetail.name}}">
+    <ion-nav-title>{{clientDetail.name}}</ion-nav-title>
+    <ion-nav-buttons side="right">
+        <button class="button" ng-click="popover.show($event)"><span class="icon ion-android-more-vertical"></span></button>
+        <!--<a class="button icon ion-plus" href="#/clientnew"></a>-->
+        <!--<button class="button  button-clear button-positive">New</button>-->
+    </ion-nav-buttons>
     <ion-content>
-
+        <ion-list>
+            <ion-item>Id: <span class="badge badge-stable">{{clientDetail.id}}</span></ion-item>
+            <ion-item>Name: <span class="badge badge-stable">{{clientDetail.name}}</span></ion-item>
+            <ion-item>Email: <span class="badge badge-stable">{{clientDetail.email}}</span></ion-item>
+        </ion-list>
     </ion-content>
+    <script id="templates/popover.html" type="text/ng-template">
+        <ion-popover-view>
+            <ion-content>
+                <div class="list">
+                    <a class="item" href="http://learn.ionicframework.com/" target="_blank">
+                        Learn Ionic
+                    </a>
+                    <a class="item" href="http://ionicframework.com/docs/" target="_blank">
+                        Documentation
+                    </a>
+                </div>
+            </ion-content>
+        </ion-popover-view>
+    </script>
 </ion-view>
+
