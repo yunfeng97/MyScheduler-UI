@@ -31,8 +31,8 @@
            "proxyUrl": "http://localhost:1337/api/clients/allClients"
       },
       {
-           "path": "/api/clients/client/:clientId",
-           "proxyUrl": "http://localhost:1337/api/clients/client/:clientId"
+           "path": "/api/clients/client",
+           "proxyUrl": "http://localhost:1337/api/clients/client"
       }
   ]
 }

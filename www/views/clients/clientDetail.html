@@ -12,15 +12,15 @@
             <ion-item>Email: <span class="badge badge-stable">{{clientDetail.email}}</span></ion-item>
         </ion-list>
     </ion-content>
-    <script id="templates/popover.html" type="text/ng-template">
+    <script id="clients/popover.html" type="text/ng-template"  ng-controller="ClientDetailsController">
         <ion-popover-view>
             <ion-content>
                 <div class="list">
-                    <a class="item" href="http://learn.ionicframework.com/" target="_blank">
-                        Learn Ionic
+                    <a class="item" ng-click="editClient()">
+                        Edit
                     </a>
-                    <a class="item" href="http://ionicframework.com/docs/" target="_blank">
-                        Documentation
+                    <a class="item" ng-click="confirmDelete()">
+                        Delete
                     </a>
                 </div>
             </ion-content>
