@@ -74,6 +74,11 @@ angular.module('App', ['ionic'])
                         templateUrl: 'views/dashboard/appDetail.html'
                     }
                 }
+            })
+            .state('services', {
+                url: '/services',
+                controller: 'ServicesController',
+                templateUrl: 'views/services/services.html'
             });
 
         $urlRouterProvider.otherwise('/dashboard/todayApps');
