@@ -1,4 +1,4 @@
-angular.module('App', ['ionic'])
+angular.module('App', ['ionic', 'ui.calendar'])
 
     .config(function ($stateProvider, $urlRouterProvider) {
 
