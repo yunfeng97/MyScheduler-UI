@@ -1,67 +1,90 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-  <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
 
-  <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="lib/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="views/calendar/calendar.css" />
 
-  <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-  <link href="css/ionic.app.css" rel="stylesheet">
-  -->
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
 
-  <!-- ionic/angularjs js -->
-  <script src="lib/ionic/js/ionic.bundle.js"></script>
-  <script src="lib/moment/moment.js"></script>
-  <script src="lib/moment-timezone/builds/moment-timezone-with-data.js"></script>
-  <script src="lib/suncalc/suncalc.js"></script>
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/moment/moment.js"></script>
+    <script src="lib/moment-timezone/builds/moment-timezone-with-data.js"></script>
+    <script src="lib/suncalc/suncalc.js"></script>
+    <script src="lib/angular-ui-calendar/src/calendar.js"></script>
+    <script type="text/javascript" src="lib/fullcalendar/dist/fullcalendar.min.js"></script>
+    <script type="text/javascript" src="lib/fullcalendar/dist/lang/ja.js"></script>
+    <script type="text/javascript" src="lib/fullcalendar/dist/gcal.js"></script>
 
-  <!-- cordova script (this will be a 404 during development) -->
-  <script src="cordova.js"></script>
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
 
-  <!-- your app's js -->
-  <script src="js/app.js"></script>
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
 
-  <script src="views/dashboard/dashboard.js"></script>
-  <script src="views/dashboard/appDetails.js"></script>
-  <script src="views/clients/clients.js"></script>
-  <script src="views/services/services.js"></script>
-  <script src="views/clients/clientDetails.js"></script>
+    <script src="views/dashboard/dashboard.js"></script>
+    <script src="views/dashboard/appDetails.js"></script>
+    <script src="views/clients/clients.js"></script>
+    <script src="views/services/services.js"></script>
+    <script src="views/clients/clientDetails.js"></script>
+    <script src="views/calendar/Calendar.js"></script>
+
 
 </head>
 <body ng-app="App">
 <ion-side-menus>
-  <ion-side-menu-content>
-    <ion-nav-bar class="bar-positive">
-      <ion-nav-buttons side="left">
-        <button class="button button-clear" menu-toggle="left">
-          <span class="icon ion-navicon"></span>
-        </button>
-      </ion-nav-buttons>
-        <ion-nav-back-button class="button-clear">
-            <i class="ion-chevron-left"></i> Back
-        </ion-nav-back-button>
-    </ion-nav-bar>
-    <ion-nav-view></ion-nav-view>
-  </ion-side-menu-content>
-  <ion-side-menu side="left">
-    <ion-header-bar class="bar-dark">
-      <h1 class="title">My Schedule</h1>
-    </ion-header-bar>
-    <ion-content>
-      <ion-list>
-        <ion-item class="item-icon-left" ui-sref="dashboard.today" menu-close ng-click=""><span class="icon ion-home"></span> Dashboard</ion-item>
-        <ion-item class="item-icon-left" ui-sref="clients" menu-close ng-click=""><span class="icon ion-ios-cog"></span> Clients</ion-item>
-        <ion-item class="item-icon-left" ui-sref="services" menu-close ng-click=""><span class="icon ion-ios-cog"></span> Services</ion-item>
-        <ion-item class="item-icon-left" ui-sref="calendar" menu-close ng-click=""><span class="icon ion-ios-cog"></span> Calendar</ion-item>
-        <ion-item class="item-icon-left" ui-sref="settings" menu-close><span class="icon ion-ios-cog"></span> Settings</ion-item>
-        <ion-item class="item-divider">Favorites</ion-item>
-        <ion-item class="item-icon-left" ui-sref="weather({city: location.city, lat: location.lat, lng: location.lng})" menu-close ng-repeat="location in locations"><span class="icon ion-ios-location"></span> {{location.city}}</ion-item>
-      </ion-list>
-    </ion-content>
-  </ion-side-menu>
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-positive">
+            <ion-nav-buttons side="left">
+                <button class="button button-clear" menu-toggle="left">
+                    <span class="icon ion-navicon"></span>
+                </button>
+            </ion-nav-buttons>
+            <ion-nav-back-button class="button-clear">
+                <i class="ion-chevron-left"></i> Back
+            </ion-nav-back-button>
+        </ion-nav-bar>
+        <ion-nav-view></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="left">
+        <ion-header-bar class="bar-dark">
+            <h1 class="title">My Schedule</h1>
+        </ion-header-bar>
+        <ion-content>
+            <ion-list>
+                <ion-item class="item-icon-left" ui-sref="dashboard.today" menu-close ng-click=""><span
+                        class="icon ion-home"></span> Dashboard
+                </ion-item>
+                <ion-item class="item-icon-left" ui-sref="clients" menu-close ng-click=""><span
+                        class="icon ion-ios-cog"></span> Clients
+                </ion-item>
+                <ion-item class="item-icon-left" ui-sref="services" menu-close ng-click=""><span
+                        class="icon ion-ios-cog"></span> Services
+                </ion-item>
+                <ion-item class="item-icon-left" ui-sref="calendar" menu-close ng-click=""><span
+                        class="icon ion-ios-cog"></span> Calendar
+                </ion-item>
+                <ion-item class="item-icon-left" ui-sref="settings" menu-close><span class="icon ion-ios-cog"></span>
+                    Settings
+                </ion-item>
+                <ion-item class="item-divider">Favorites</ion-item>
+                <ion-item class="item-icon-left"
+                          ui-sref="weather({city: location.city, lat: location.lat, lng: location.lng})" menu-close
+                          ng-repeat="location in locations"><span class="icon ion-ios-location"></span>
+                    {{location.city}}
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
 </ion-side-menus>
 </body>
 </html>

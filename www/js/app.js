@@ -22,6 +22,11 @@ angular.module('App', ['ionic', 'ui.calendar'])
                 url: '/settings',
                 templateUrl: 'views/settings/settings.html'
             })
+            .state('calendar', {
+                url: 'calendar',
+                controller: 'CalendarController',
+                templateUrl: 'views/calendar/Calendar.html'
+            })
             .state('dashboard', {
                 url: '/dashboard',
                 abstract: true,
