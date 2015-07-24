@@ -18,7 +18,7 @@ angular.module('App')
             minTime: '08:00',
             maxTime: '19:30',
             drop: $scope.drop,
-            eventClick: $scope.removeEvent
+            eventClick: $scope.alertOnEventClick
         }
     };
 
@@ -65,6 +65,8 @@ angular.module('App')
         /* alert on eventClick */
         $scope.alertOnEventClick = function( date, jsEvent, view){
             $scope.alertMessage = (date.title + ' was clicked ');
+            console.log($scope.alertMessage);
+           // alert($scope.alertMessage);
         };
         /* alert on Drop */
         $scope.alertOnDrop = function(event, delta, revertFunc, jsEvent, ui, view){

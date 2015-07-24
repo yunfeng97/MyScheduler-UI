@@ -1,0 +1,38 @@
+{
+  "name": "MyScheduler",
+  "app_id": "",
+  "proxies": [
+     {
+        "path": "/api/dashboard/todayApps",
+        "proxyUrl": "http://localhost:1337/api/dashboard/todayApps"
+      },
+      {
+         "path": "/api/dashboard/app",
+         "proxyUrl": "http://localhost:1337/api/dashboard/app"
+      },
+      {
+          "path": "/api/dashboard/newApps",
+          "proxyUrl": "http://localhost:1337/api/dashboard/newApps"
+      },
+      {
+          "path": "/api/dashboard/cancelledApps",
+          "proxyUrl": "http://localhost:1337/api/dashboard/cancelledApps"
+      },
+      {
+          "path": "/api/dashboard/rescheduledApps",
+          "proxyUrl": "http://localhost:1337/api/dashboard/rescheduledApps"
+      },
+      {
+           "path": "/api/dashboard/app/accept",
+           "proxyUrl": "http://localhost:1337/api/dashboard/app/accept"
+      },
+      {
+           "path": "/api/clients/allClients",
+           "proxyUrl": "http://localhost:1337/api/clients/allClients"
+      },
+      {
+           "path": "/api/clients/client",
+           "proxyUrl": "http://localhost:1337/api/clients/client"
+      }
+  ]
+}
