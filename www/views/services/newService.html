@@ -1,0 +1,27 @@
+<ion-view  view-title="Create New Services">
+
+    <ion-content>
+        <form class="list">
+            <div class="item item-divider">
+                Service
+            </div>
+            <label class="item item-input">
+                <input type="text" placeholder="First Name" ng-model="attendee.firstname">
+            </label>
+            <label class="item item-input">
+                <input type="text" placeholder="Last Name" ng-model="attendee.lastname">
+            </label>
+            <toggle ng-model="attendee.vegetarian">
+                Vegetarian
+            </toggle>
+            <div class="item item-divider">
+                Hours of Business
+            </div>
+
+            <div class="padding">
+                <button class="button button-block" ng-click="submit()">Checkin</button>
+            </div>
+        </form>
+    </ion-content>
+
+</ion-view>
