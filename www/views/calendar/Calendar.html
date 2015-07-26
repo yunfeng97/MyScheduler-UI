@@ -1,6 +1,24 @@
 <ion-view view-title="Calendar">
+    <ion-nav-buttons side="right">
+        <button class="button" ng-click="popover.show($event)"><span class="icon ion-android-more-vertical"></span></button>
+        <!--<a class="button icon ion-plus" href="#/clientnew"></a>-->
+        <!--<button class="button  button-clear button-positive">New</button>-->
+    </ion-nav-buttons>
+
     <ion-content class="padding">
         <!--<div id="eventCalendar" ui-calendar="uiConfig.calendar" ng-model="eventSources" calendar="eventCalendar"></div>-->
         <div ui-calendar="uiConfig.calendar" class="calendar" ng-model="eventSources"></div>
     </ion-content>
+
+    <script id="calendar/popover.html" type="text/ng-template"  ng-controller="CalendarController">
+        <ion-popover-view>
+            <ion-content>
+                <div class="list">
+                    <a class="item" ng-click="newService()">
+                        New Service
+                    </a>
+                </div>
+            </ion-content>
+        </ion-popover-view>
+    </script>
 </ion-view>

@@ -3,7 +3,7 @@
  */
 
 angular.module('App')
-    .controller('ServicesController', function($scope, $http){
+    .controller('ServicesController', function($scope, $http, $ionicPopover){
 
         $scope.findServices = function(){
 
@@ -21,5 +21,13 @@ angular.module('App')
 
         };
 
+        $scope.newService = function(){
 
+        };
+
+        $ionicPopover.fromTemplateUrl('services/popover.html', {
+            scope: $scope,
+        }).then(function(popover) {
+            $scope.popover = popover;
+        });
 });

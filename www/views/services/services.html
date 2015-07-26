@@ -1,8 +1,25 @@
 <ion-view  view-title="My Services">
 
+    <ion-nav-buttons side="right">
+        <button class="button" ng-click="popover.show($event)"><span class="icon ion-android-more-vertical"></span></button>
+        <!--<a class="button icon ion-plus" href="#/clientnew"></a>-->
+        <!--<button class="button  button-clear button-positive">New</button>-->
+    </ion-nav-buttons>
     <ion-content>
 
 
     </ion-content>
+
+    <script id="services/popover.html" type="text/ng-template"  ng-controller="ServicesController">
+        <ion-popover-view style="top:220px;height: 60px">
+            <ion-content>
+<ul>
+                    <a class="item" ng-click="newService()">
+                        New Service
+                    </a>
+</ul>
+            </ion-content>
+        </ion-popover-view>
+    </script>
 
 </ion-view>
