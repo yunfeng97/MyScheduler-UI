@@ -5,6 +5,27 @@
 angular.module('App')
     .controller('ServicesController', function($scope, $http, $ionicPopover){
 
+        $scope.getAllServicesByUser = function(){
+            $http.get('/api/services/allServicesByUser/2').success(function (data) {
+                //$http.get('http://192.168.1.171:1337/api/clients/allServices').success(function (data) {
+                var allServices = [];
+
+                data.forEach(function(service){
+                    allServices.push(service);
+                });
+
+                $scope.allServices = allServices;
+                //console.log("get all services: " + data);
+                //return data;
+            }).error(function (error) {
+                $scope.error = error;
+                console.log(error);
+            }).finally(function () {
+                $scope.$broadcast('scroll.refreshComplete')
+            });
+
+        };
+
         $scope.findServices = function(){
 
         };

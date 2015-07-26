@@ -43,7 +43,9 @@
 
             ng-click="showClient(client.id)"
             -->
-            <ion-item  ng-repeat="client in allClients " class="item {{client.class}}" ui-sref="showclient({clientid: client.id})"> {{client.name}} </ion-item>
+            <ion-item ng-repeat="client in allClients " class="item {{client.class}}"
+                      ui-sref="showclient({clientid: client.id})"> {{client.name}}
+            </ion-item>
         </div>
     </ion-content>
 
