@@ -1,0 +1,29 @@
+<ion-view  ng-controller="ServiceDetailsController" view-title="{{serviceDetail.name}}">
+    <ion-nav-title>{{serviceDetail.name}}</ion-nav-title>
+    <ion-nav-buttons side="right">
+        <button class="button" ng-click="popover.show($event)"><span class="icon ion-android-more-vertical"></span></button>
+        <!--<a class="button icon ion-plus" href="#/clientnew"></a>-->
+        <!--<button class="button  button-clear button-positive">New</button>-->
+    </ion-nav-buttons>
+    <ion-content>
+        <ion-list>
+            <ion-item>Id: <span class="badge badge-stable">{{serviceDetail.id}}</span></ion-item>
+            <ion-item>Name: <span class="badge badge-stable">{{serviceDetail.name}}</span></ion-item>
+        </ion-list>
+    </ion-content>
+    <script id="services/popover-details.html" type="text/ng-template"  ng-controller="ServiceDetailsController">
+        <ion-popover-view>
+            <ion-content>
+                <div class="list">
+                    <a class="item" ng-click="editClient()">
+                        Edit
+                    </a>
+                    <a class="item" ng-click="confirmDelete()">
+                        Delete
+                    </a>
+                </div>
+            </ion-content>
+        </ion-popover-view>
+    </script>
+</ion-view>
+

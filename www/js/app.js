@@ -84,6 +84,11 @@ angular.module('App', ['ionic', 'ui.calendar'])
                 url: '/services',
                 controller: 'ServicesController',
                 templateUrl: 'views/services/services.html'
+            })
+            .state('showservice', {
+                url: '/showservice/:serviceid',
+                //controller: 'ClientDetailsController',
+                templateUrl: 'views/services/serviceDetail.html'
             });
 
         $urlRouterProvider.otherwise('/dashboard/todayApps');
