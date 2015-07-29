@@ -37,8 +37,11 @@
       {
            "path": "/api/services/allServicesByUser",
            "proxyUrl": "http://localhost:1337/api/service/allServicesByUser"
+      },
+      {
+           "path": "/api/services/service",
+           "proxyUrl": "http://localhost:1337/api/services/service"
       }
-
 
   ]
 }

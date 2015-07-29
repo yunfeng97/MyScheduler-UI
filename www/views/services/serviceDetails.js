@@ -5,7 +5,7 @@
 angular.module('App')
     .controller('ServiceDetailsController', function ($scope, $http, $stateParams, $ionicPopover) {
         $scope.showService = function () {
-            var serviceId = $stateParams.serviceId;
+            var serviceId = $stateParams.serviceid;
             console.log("in showService with serviceId: " + serviceId);
             $http.get('/api/services/service/' + serviceId).success(function (data) {
                 //$http.get('http://localhost:1337/api/services/service/' + serviceId).success(function (data) {

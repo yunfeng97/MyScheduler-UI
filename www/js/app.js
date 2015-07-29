@@ -15,7 +15,7 @@ angular.module('App', ['ionic', 'ui.calendar'])
             .state('showclient', {
                 cache: false,
                 url: '/showclient/:clientid',
-                //controller: 'ClientDetailsController',
+                controller: 'ClientDetailsController',
                 templateUrl: 'views/clients/clientDetail.html'
             })
             .state('settings', {
@@ -87,7 +87,7 @@ angular.module('App', ['ionic', 'ui.calendar'])
             })
             .state('showservice', {
                 url: '/showservice/:serviceid',
-                //controller: 'ClientDetailsController',
+                controller: 'ServiceDetailsController',
                 templateUrl: 'views/services/serviceDetail.html'
             })
             .state('servicenew', {
