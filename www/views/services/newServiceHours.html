@@ -1,0 +1,131 @@
+<ion-view view-title="Create New Services">
+
+    <ion-content>
+        <form class="list">
+            <div ng-hide="showDetails">
+                <div class="item item-divider">
+                    Days Open
+                </div>
+                <ion-checkbox ng-checked="true">
+                    Monday
+                </ion-checkbox>
+                <ion-checkbox ng-checked="true">
+                    Tuesday
+                </ion-checkbox>
+                <ion-checkbox ng-checked="true">
+                    Wednesday
+                </ion-checkbox>
+                <ion-checkbox ng-checked="true">
+                    Thursday
+                </ion-checkbox>
+                <ion-checkbox ng-checked="true">
+                    Friday
+                </ion-checkbox>
+                <ion-checkbox ng-checked="false">
+                    Saturday
+                </ion-checkbox>
+                <ion-checkbox ng-checked="false">
+                    Sunday
+                </ion-checkbox>
+
+                <div class="item item-divider">
+                    Work Hours
+                </div>
+                <label class="item item-input">
+                    <input type="text" placeholder="Open 9am">
+                </label>
+                <label class="item item-input">
+                    <input type="text" placeholder="Close 5pm">
+                </label>
+
+                <div class="item item-divider">
+                    Break Time
+                </div>
+                <label class="item item-input">
+                    <input type="text" placeholder="From 12pam">
+                </label>
+                <label class="item item-input">
+                    <input type="text" placeholder="To 1pm">
+                </label>
+
+                <div class="">
+                    <button class="button button-block" ng-click="generateHours()">Generate Hours</button>
+                </div>
+            </div>
+
+            <div ng-show="showDetails">
+                <form class="list">
+                    <div class="item item-divider">
+                        Monday
+                    </div>
+                    <label class="item item-input">
+                        <input type="text" placeholder="9am" ng-model="service.monstart">
+                    </label>
+                    <label class="item item-input">
+                        <input type="text" placeholder="6pm" ng-model="service.monend">
+                    </label>
+                    <div class="item item-divider">
+                        Tuesday
+                    </div>
+                    <label class="item item-input">
+                        <input type="text" placeholder="9am" ng-model="service.tuestart">
+                    </label>
+                    <label class="item item-input">
+                        <input type="text" placeholder="6pm" ng-model="service.tueend">
+                    </label>
+                    <div class="item item-divider">
+                        Wednesday
+                    </div>
+                    <label class="item item-input">
+                        <input type="text" placeholder="9am" ng-model="service.wedstart">
+                    </label>
+                    <label class="item item-input">
+                        <input type="text" placeholder="6pm" ng-model="service.wedend">
+                    </label>
+                    <div class="item item-divider">
+                        Thursday
+                    </div>
+                    <label class="item item-input">
+                        <input type="text" placeholder="9am" ng-model="service.thustart">
+                    </label>
+                    <label class="item item-input">
+                        <input type="text" placeholder="6pm" ng-model="service.thuend">
+                    </label>
+                    <div class="item item-divider">
+                        Friday
+                    </div>
+                    <label class="item item-input">
+                        <input type="text" placeholder="9am" ng-model="service.fristart">
+                    </label>
+                    <label class="item item-input">
+                        <input type="text" placeholder="6pm" ng-model="service.friend">
+                    </label>
+                    <div class="item item-divider">
+                        Saturday
+                    </div>
+                    <label class="item item-input">
+                        <input type="text" placeholder="closed" ng-model="service.satstart">
+                    </label>
+                    <label class="item item-input">
+                        <input type="text" placeholder="closed" ng-model="service.satend">
+                    </label>
+                    <div class="item item-divider">
+                        Sunday
+                    </div>
+                    <label class="item item-input">
+                        <input type="text" placeholder="closed" ng-model="service.sunstart">
+                    </label>
+                    <label class="item item-input">
+                        <input type="text" placeholder="closed" ng-model="service.sunend">
+                    </label>
+
+                    <div class="">
+                        <button class="button button-block" ng-click="submit()">Complete</button>
+                    </div>
+                </form>
+
+            </div>
+        </form>
+    </ion-content>
+
+</ion-view>

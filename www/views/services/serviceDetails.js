@@ -3,7 +3,7 @@
  */
 
 angular.module('App')
-    .controller('ServiceDetailsController', function () {
+    .controller('ServiceDetailsController', function ($scope, $http, $stateParams, $ionicPopover) {
         $scope.showService = function () {
             var serviceId = $stateParams.serviceId;
             console.log("in showService with serviceId: " + serviceId);

@@ -3,23 +3,47 @@
     <ion-content>
         <form class="list">
             <div class="item item-divider">
-                Service
+                Basic Information
             </div>
             <label class="item item-input">
-                <input type="text" placeholder="First Name" ng-model="attendee.firstname">
+                <input type="text" placeholder="Service Name" ng-model="service.name">
             </label>
             <label class="item item-input">
-                <input type="text" placeholder="Last Name" ng-model="attendee.lastname">
+                <input type="text" placeholder="Description" ng-model="service.desc">
             </label>
-            <toggle ng-model="attendee.vegetarian">
-                Vegetarian
-            </toggle>
+            <label class="item item-input">
+                <input type="text" placeholder="Category" ng-model="service.category">
+            </label>
+            <div class="item item-divider">
+                Contact Information
+            </div>
+            <label class="item item-input">
+                <input type="text" placeholder="Contact Person" ng-model="service.contact">
+            </label>
+            <label class="item item-input">
+                <input type="text" placeholder="Email" ng-model="service.email">
+            </label>
+            <label class="item item-input">
+                <input type="text" placeholder="Phone" ng-model="service.phone">
+            </label>
+            <div class="item item-divider">
+                Location
+            </div>
+            <label class="item item-input">
+                <input type="text" placeholder="Address" ng-model="service.address">
+            </label>
+            <label class="item item-input">
+                <input type="text" placeholder="City" ng-model="service.city">
+            </label>
+            <label class="item item-input">
+                <input type="text" placeholder="Postal Code" ng-model="service.postcode">
+            </label>
             <div class="item item-divider">
                 Hours of Business
             </div>
 
-            <div class="padding">
-                <button class="button button-block" ng-click="submit()">Checkin</button>
+            <div class="">
+                <button class="button button-block" ui-sref="servicenewhours">Next</button>
             </div>
         </form>
     </ion-content>
