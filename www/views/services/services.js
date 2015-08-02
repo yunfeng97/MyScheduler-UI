@@ -3,7 +3,7 @@
  */
 
 angular.module('App')
-    .controller('ServicesController', function($scope, $http, $ionicPopover){
+    .controller('ServicesController', function($scope, $http, $ionicPopover, $state){
 
         $scope.service = {};
 
@@ -38,6 +38,25 @@ angular.module('App')
         };
 
         $scope.createNewService = function(){
+            var reqdata = {
+                method: 'POST',
+                url: '/api/services/registerNew',
+                headers: {
+                    'Content-Type': undefined
+                },
+                data: $.param($scope.service)// $scope.service
+            };
+            $http(reqdata).
+            //$http.post('/api/services/registerNew', $scope.service).
+                success(function(data, status, headers, config) {
+                    // this callback will be called asynchronously
+                    // when the response is available
+                }).
+                error(function(data, status, headers, config) {
+                    // called asynchronously if an error occurs
+                    // or server returns response with an error status.
+                });
+            $state.go('services');
 
         };
 

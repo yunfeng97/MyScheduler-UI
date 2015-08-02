@@ -36,11 +36,15 @@
       },
       {
            "path": "/api/services/allServicesByUser",
-           "proxyUrl": "http://localhost:1337/api/service/allServicesByUser"
+           "proxyUrl": "http://localhost:1337/api/services/allServicesByUser"
       },
       {
            "path": "/api/services/service",
            "proxyUrl": "http://localhost:1337/api/services/service"
+      },
+      {
+           "path": "/api/services/registerNew",
+           "proxyUrl": "http://localhost:1337/api/services/registerNew"
       }
 
   ]
