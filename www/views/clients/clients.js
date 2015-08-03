@@ -55,8 +55,24 @@ angular.module('App')
         };
 
         $scope.addNewClient  = function(){
-            console.log("client firstname is: " + $scope.client.firstName);
-            console.log("client email is: " + $scope.client.email);
+            var reqdata = {
+                method: 'POST',
+                url: '/api/clients/newClient',
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                data: $.param($scope.client)
+            };
+            $http(reqdata).
+            //$http.post('/api/clients/newClient', $scope.client).
+                success(function(data, status, headers, config) {
+                    // this callback will be called asynchronously
+                    // when the response is available
+                }).
+                error(function(data, status, headers, config) {
+                    // called asynchronously if an error occurs
+                    // or server returns response with an error status.
+                });
+            //console.log("client firstname is: " + $scope.client.firstName);
+            //console.log("client email is: " + $scope.client.email);
 
         };
 

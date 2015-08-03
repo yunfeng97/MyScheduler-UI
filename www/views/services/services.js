@@ -41,13 +41,14 @@ angular.module('App')
             var reqdata = {
                 method: 'POST',
                 url: '/api/services/registerNew',
-                headers: {
-                    'Content-Type': undefined
-                },
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                 data: $.param($scope.service)// $scope.service
             };
-            $http(reqdata).
-            //$http.post('/api/services/registerNew', $scope.service).
+            console.log("new service name: " + $scope.service.name);
+            console.log("new service monstart: " + $scope.service.monstart);
+
+            //$http(reqdata).
+            $http.post('/api/services/registerNew', $scope.service).
                 success(function(data, status, headers, config) {
                     // this callback will be called asynchronously
                     // when the response is available
@@ -56,7 +57,7 @@ angular.module('App')
                     // called asynchronously if an error occurs
                     // or server returns response with an error status.
                 });
-            $state.go('services');
+            //$state.go('services');
 
         };
 
