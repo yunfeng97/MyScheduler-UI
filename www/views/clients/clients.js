@@ -2,10 +2,13 @@
  * Created by yunfeng on 02/07/15.
  */
 angular.module('App')
-    .controller('ClientsController', function ($scope, $http, $stateParams, $window) {
+    .controller('ClientsController', function ($scope, $http, $stateParams, $window, $state) {
         $scope.client = {};
+        $scope.allClients = [];
 
         $scope.getAllClients = function () {
+            console.log('in getAllClients');
+
             $http.get('/api/clients/allClients').success(function (data) {
                 //$http.get('http://192.168.1.171:1337/api/clients/allClients').success(function (data) {
                 var allClients = [];
@@ -66,6 +69,11 @@ angular.module('App')
                 success(function(data, status, headers, config) {
                     // this callback will be called asynchronously
                     // when the response is available
+                    console.log(data.name);
+                    $scope.allClients.push(data);
+                    //$scope.getAllClients();
+                    console.log("number of clients: " + $scope.allClients);
+                    $state.go('clients');
                 }).
                 error(function(data, status, headers, config) {
                     // called asynchronously if an error occurs
