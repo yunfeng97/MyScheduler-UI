@@ -1,4 +1,4 @@
-<ion-view view-title="Clients" ng-controller="ClientsController" data-ng-init="getAllClients()">
+<ion-view view-title="Clients" >
     <ion-nav-buttons side="right">
         <!--<button class="button icon ion-plus" ui-sref="client.new"><span class="icon ion-more"></span></button>-->
         <a class="button icon ion-plus" href="#/clientnew"></a>
@@ -28,7 +28,7 @@
     </ion-content>
     -->
     <ion-content>
-        <ion-refresher pulling-text="Pull to refresh" on-refresh="getAllClients('')">
+        <ion-refresher pulling-text="Pull to refresh" on-refresh="getAllClients()">
         </ion-refresher>
 
         <div class="list">

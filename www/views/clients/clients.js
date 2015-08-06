@@ -39,7 +39,7 @@ angular.module('App')
                 }
                 */
                 $scope.allClients = allClients;
-                console.log("get all clients: " + data);
+                //console.log("get all clients: " + data);
                 //return data;
             }).error(function (error) {
                 $scope.error = error;
@@ -69,10 +69,11 @@ angular.module('App')
                 success(function(data, status, headers, config) {
                     // this callback will be called asynchronously
                     // when the response is available
-                    console.log(data.name);
+                    //console.log(data.name);
                     $scope.allClients.push(data);
                     //$scope.getAllClients();
-                    console.log("number of clients: " + $scope.allClients);
+                    //console.log("number of clients: " + $scope.allClients);
+                    //$state.go('clients', {}, {reload: true});
                     $state.go('clients');
                 }).
                 error(function(data, status, headers, config) {

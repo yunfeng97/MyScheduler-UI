@@ -10,6 +10,7 @@ angular.module('App')
             $http.get('/api/clients/client/' + clientId).success(function (data) {
             //$http.get('http://localhost:1337/api/clients/client/' + clientId).success(function (data) {
                 $scope.clientDetail = data;
+                console.log('client name: ' + $scope.clientDetail.name);
             }).error(function (error) {
                 $scope.error = error;
                 console.log(error);
@@ -37,6 +38,10 @@ angular.module('App')
                     console.log('You are not sure');
                 }
             });
+        };
+
+        $scope.deleteClient = function(){
+            console.log("delete client");
         };
 
         $scope.showClient();

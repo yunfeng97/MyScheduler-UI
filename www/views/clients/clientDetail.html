@@ -1,8 +1,16 @@
-<ion-view  ng-controller="ClientDetailsController" view-title="{{clientDetail.name}}">
+<ion-view  view-title="{{clientDetail.name}}">
     <ion-nav-title>{{clientDetail.name}}</ion-nav-title>
+    <!--
     <ion-nav-buttons side="right">
         <button class="button" ng-click="popover.show($event)"><span class="icon ion-android-more-vertical"></span></button>
         <!--<a class="button icon ion-plus" href="#/clientnew"></a>-->
+        <!--<button class="button  button-clear button-positive">New</button>
+    </ion-nav-buttons>
+    -->
+    <ion-nav-buttons side="right">
+        <!--<button class="button icon ion-plus" ui-sref="client.new"><span class="icon ion-more"></span></button>-->
+        <a class="button icon ion-edit" href="#/editclient"></a>
+        <a class="button icon ion-android-delete" ng-click="deleteClient()"></a>
         <!--<button class="button  button-clear button-positive">New</button>-->
     </ion-nav-buttons>
     <ion-content>

@@ -5,6 +5,7 @@ angular.module('App', ['ionic', 'ui.calendar'])
         $stateProvider
             .state('clients', {
                 url: '/clients',
+                cache: false,
                 controller: 'ClientsController',
                 templateUrl: 'views/clients/clients.html'
             })
@@ -17,6 +18,12 @@ angular.module('App', ['ionic', 'ui.calendar'])
                 url: '/showclient/:clientid',
                 controller: 'ClientDetailsController',
                 templateUrl: 'views/clients/clientDetail.html'
+            })
+            .state('editclient', {
+                cache: false,
+                url: '/editclient/:clientid',
+                controller: 'ClientDetailsController',
+                templateUrl: 'views/clients/editClient.html'
             })
             .state('settings', {
                 url: '/settings',
